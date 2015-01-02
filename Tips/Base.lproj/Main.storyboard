@@ -1,81 +1,116 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Tips" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c4m-Yd-Xkv"/>
+                        <viewControllerLayoutGuide type="bottom" id="4Tu-xo-DIW"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bill Amount" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IC3-4r-6dJ">
-                                <rect key="frame" x="30" y="151" width="88" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bill Amount" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IC3-4r-6dJ">
+                                <rect key="frame" x="30" y="99" width="88" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gvO-xn-WuI">
-                                <rect key="frame" x="30" y="230" width="24" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvO-xn-WuI">
+                                <rect key="frame" x="30" y="161" width="24" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6Ou-jI-jwb">
-                                <rect key="frame" x="159" y="230" width="118" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ou-jI-jwb">
+                                <rect key="frame" x="157" y="161" width="127" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kGl-oZ-QNQ">
-                                <rect key="frame" x="30" y="312" width="79" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGl-oZ-QNQ">
+                                <rect key="frame" x="30" y="259" width="76" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="5rp-YK-Cgy"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$100" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PZk-jF-PbY">
-                                <rect key="frame" x="132" y="312" width="145" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$100" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZk-jF-PbY">
+                                <rect key="frame" x="157" y="259" width="127" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="127" id="Vld-sa-KM9"/>
+                                    <constraint firstAttribute="height" constant="36" id="eUY-Nd-z6R"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" id="tdJ-hN-lFq">
-                                <rect key="frame" x="21" y="275" width="283" height="9"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.061580605590422555" green="0.56830531243850402" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="13" id="bW3-iZ-Q1e">
-                                <rect key="frame" x="159" y="147" width="132" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="bW3-iZ-Q1e">
+                                <rect key="frame" x="157" y="95" width="127" height="30"/>
+                                <color key="backgroundColor" red="0.99607843139999996" green="0.96704299199999999" blue="0.79469304789999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="127" id="3Vt-EF-Os5"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 <connections>
                                     <action selector="onEditingChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="yL5-cL-Ug5"/>
                                 </connections>
                             </textField>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="mTg-oW-Uh9">
-                                <rect key="frame" x="21" y="369" width="283" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tdJ-hN-lFq">
+                                <rect key="frame" x="16" y="216" width="288" height="9"/>
+                                <color key="backgroundColor" red="0.1172789118" green="0.60130806780000001" blue="0.83124210860000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="9" id="JZL-ja-4Af"/>
+                                </constraints>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mTg-oW-Uh9">
+                                <rect key="frame" x="16" y="327" width="288" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="bDe-Kd-GFS"/>
+                                </constraints>
                                 <segments>
                                     <segment title="18%"/>
                                     <segment title="20%"/>
                                     <segment title="22%"/>
                                 </segments>
+                                <color key="tintColor" red="0.10653191696632232" green="0.54620647642869746" blue="0.75507023358585856" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="onEditingChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="cao-NS-3dU"/>
                                 </connections>
                             </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.99607843139999996" green="0.96704299202204413" blue="0.79469304787217432" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="PZk-jF-PbY" firstAttribute="top" secondItem="tdJ-hN-lFq" secondAttribute="bottom" constant="34" id="1nr-gF-58z"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PZk-jF-PbY" secondAttribute="trailing" constant="20" id="B8J-N1-Tgz"/>
+                            <constraint firstItem="tdJ-hN-lFq" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="L34-FM-M5x"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bW3-iZ-Q1e" secondAttribute="trailing" constant="15" id="TpA-CB-U7q"/>
+                            <constraint firstItem="IC3-4r-6dJ" firstAttribute="top" secondItem="c4m-Yd-Xkv" secondAttribute="bottom" constant="79" id="X5m-eR-yzp"/>
+                            <constraint firstItem="tdJ-hN-lFq" firstAttribute="top" secondItem="6Ou-jI-jwb" secondAttribute="bottom" constant="34" id="Ymg-EX-cmq"/>
+                            <constraint firstItem="gvO-xn-WuI" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="14" id="aJD-Nq-pXd"/>
+                            <constraint firstItem="IC3-4r-6dJ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="14" id="b9b-7b-xnJ"/>
+                            <constraint firstItem="gvO-xn-WuI" firstAttribute="top" secondItem="IC3-4r-6dJ" secondAttribute="bottom" constant="41" id="dqY-Zy-mcO"/>
+                            <constraint firstItem="kGl-oZ-QNQ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="14" id="h13-IV-aTs"/>
+                            <constraint firstItem="6Ou-jI-jwb" firstAttribute="top" secondItem="bW3-iZ-Q1e" secondAttribute="bottom" constant="36" id="iAZ-ra-GAq"/>
+                            <constraint firstItem="mTg-oW-Uh9" firstAttribute="top" secondItem="PZk-jF-PbY" secondAttribute="bottom" constant="41" id="mR2-8R-Tnz"/>
+                            <constraint firstItem="tdJ-hN-lFq" firstAttribute="leading" secondItem="mTg-oW-Uh9" secondAttribute="leading" id="n4f-Zc-z7i"/>
+                            <constraint firstItem="kGl-oZ-QNQ" firstAttribute="top" secondItem="tdJ-hN-lFq" secondAttribute="bottom" constant="34" id="pgq-Zo-hzU"/>
+                            <constraint firstItem="bW3-iZ-Q1e" firstAttribute="top" secondItem="c4m-Yd-Xkv" secondAttribute="bottom" constant="75" id="qMz-rU-W4E"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6Ou-jI-jwb" secondAttribute="trailing" constant="20" id="sRw-Az-mTi"/>
+                            <constraint firstAttribute="centerX" secondItem="mTg-oW-Uh9" secondAttribute="centerX" id="vZm-A7-Xr7"/>
+                            <constraint firstAttribute="centerX" secondItem="tdJ-hN-lFq" secondAttribute="centerX" id="xSl-jB-xoI"/>
+                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="96Y-jg-0bT" appends="YES" id="gFX-Yi-Bo9"/>
                         </connections>
