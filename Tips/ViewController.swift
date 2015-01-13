@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var splitBillControl: UISegmentedControl!
     @IBOutlet weak var perPersonLabel: UILabel!
     @IBOutlet weak var perPersonField: UILabel!
+    let defaults = NSUserDefaults.standardUserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,9 @@ class ViewController: UIViewController {
         totalLabel.text = "$0.00"
         perPersonField.hidden = true
         perPersonLabel.hidden = true
+        tipControl.selectedSegmentIndex = defaults.integerForKey("default_tip_index")
+        println("loading")
+        println(defaults.integerForKey("default_tip_index"))
     }
     
     override func didReceiveMemoryWarning() {
