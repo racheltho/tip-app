@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var perPersonLabel: UILabel!
     @IBOutlet weak var perPersonField: UILabel!
     let defaults = NSUserDefaults.standardUserDefaults()
+    let formatter = NSNumberFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,7 @@ class ViewController: UIViewController {
         perPersonField.hidden = true
         perPersonLabel.hidden = true
         tipControl.selectedSegmentIndex = defaults.integerForKey("default_tip_index")
+        formatter.numberStyle = .CurrencyStyle
 
         // check if billAmount was entered in last 30 seconds
         var currentTime = NSDate()
@@ -42,8 +44,8 @@ class ViewController: UIViewController {
                 tipLabel.text = defaults.objectForKey("tipLabelText") as? String
                 totalLabel.text = defaults.objectForKey("totalLabelText") as? String
             } else {
-                tipLabel.text = "$0.00"
-                totalLabel.text = "$0.00"
+                tipLabel.text = formatter.stringFromNumber(0)
+                totalLabel.text = formatter.stringFromNumber(0)
             }
             
         }
@@ -68,9 +70,7 @@ class ViewController: UIViewController {
         var total = billAmount + tip
         var perPersonAmount = total / splitBillNum._bridgeToObjectiveC().doubleValue
         
-        var formatter = NSNumberFormatter()
         formatter.numberStyle = .CurrencyStyle
-        
         tipLabel.text = formatter.stringFromNumber(tip)
         totalLabel.text = formatter.stringFromNumber(total)
         
