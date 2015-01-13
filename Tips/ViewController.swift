@@ -21,14 +21,34 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        tipLabel.text = "$0.00"
-        totalLabel.text = "$0.00"
+        defaults.synchronize()
         perPersonField.hidden = true
         perPersonLabel.hidden = true
         tipControl.selectedSegmentIndex = defaults.integerForKey("default_tip_index")
-        println("loading")
-        println(defaults.integerForKey("default_tip_index"))
+
+        // check if billAmount was entered in last 30 seconds
+        var currentTime = NSDate()
+        var lastChanged: NSDate!
+        if defaults.objectForKey("billTimestamp") != nil {
+            
+            lastChanged = defaults.objectForKey("billTimestamp") as NSDate
+            println(lastChanged)
+            // time interval in seconds since bill Amount was entered
+            let interval = currentTime.timeIntervalSinceDate(lastChanged)
+            if interval < 60 * 0.25 {
+                var billAmount = defaults.doubleForKey("billAmount")
+                println(billAmount)
+                billField.text = NSString(format: "%.2f", billAmount)
+                tipLabel.text = defaults.objectForKey("tipLabelText") as? String
+                totalLabel.text = defaults.objectForKey("totalLabelText") as? String
+            } else {
+                tipLabel.text = "$0.00"
+                totalLabel.text = "$0.00"
+            }
+            
+        }
+        
+       
     }
     
     override func didReceiveMemoryWarning() {
@@ -37,7 +57,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onEditingChanged(sender: AnyObject) {
-        println("User editing bill")
         var tipPercentages = [0.18, 0.2, 0.22]
         var tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
         
@@ -49,13 +68,26 @@ class ViewController: UIViewController {
         var total = billAmount + tip
         var perPersonAmount = total / splitBillNum._bridgeToObjectiveC().doubleValue
         
-        tipLabel.text = String(format: "$%.2f", tip)
-        totalLabel.text = String(format: "$%.2f", total)
+        var formatter = NSNumberFormatter()
+        formatter.numberStyle = .CurrencyStyle
+        
+        tipLabel.text = formatter.stringFromNumber(tip)
+        totalLabel.text = formatter.stringFromNumber(total)
+        
+        // save most recent time fields were edited, as well as values
+        // this will be checked on viewDidLoad, and most recent values will be loaded if less 
+        // than a certain amount of time has elapsed.
+        var timeChanged = NSDate()
+        defaults.setObject(timeChanged, forKey: "billTimestamp")
+        defaults.setDouble(billAmount, forKey: "billAmount")
+        defaults.setObject(tipLabel.text, forKey: "tipLabelText")
+        defaults.setObject(totalLabel.text, forKey: "totalLabelText")
+        defaults.synchronize()
         
         if(splitBillNum > 1){
             perPersonField.hidden = false
             perPersonLabel.hidden = false
-            perPersonField.text = String(format: "$%.2f", perPersonAmount)
+            perPersonField.text = formatter.stringFromNumber(perPersonAmount)
         }else{
             perPersonField.hidden = true
             perPersonLabel.hidden = true
