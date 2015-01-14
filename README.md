@@ -21,6 +21,6 @@ Next, the user goes to "Settings", changes the tip percentage, and hits "Cancel"
 
 To see how the app looks on a different sized iphone (with the help of auto layout and constraints), here is a gif of the 6 plus:
 
-![alt tag](https://github.com/racheltho/tip-app/blob/master/screencaps/tip_calculator.gif)
+![alt tag](https://github.com/racheltho/tip-app/blob/master/screencaps/tip_calculator2.gif)
 
 
